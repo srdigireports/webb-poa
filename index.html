@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webb Pediatric Dentistry — Hyper-Local Google Ads Launch Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F8F7;
+    --surface:#FFFFFF;
+    --surface-alt:#EAF2EF;
+    --ink:#10233A;
+    --ink-soft:#51677A;
+    --ink-faint:#8598A6;
+    --teal:#1F7A6C;
+    --teal-deep:#123F37;
+    --teal-line:#CFE3DE;
+    --amber:#DE9F3A;
+    --brick:#B5573B;
+    --line:#DCE6E2;
+    --radius:14px;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    color:var(--ink);
+    margin:0;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 14px 0;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;}
+  ::selection{background:var(--teal);color:#fff;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  img,svg{display:block;}
+
+  /* ---------- reveal-on-scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- top nav ---------- */
+  .topnav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,248,247,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:0 28px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:60px;
+  }
+  .brand{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;
+    display:flex;align-items:center;gap:9px;color:var(--teal-deep);
+    white-space:nowrap;
+  }
+  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);}
+  .navlinks{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{
+    font-size:13px;font-weight:500;color:var(--ink-soft);text-decoration:none;
+    padding:8px 12px;border-radius:8px;white-space:nowrap;transition:color .15s, background .15s;
+  }
+  .navlinks a:hover{color:var(--teal-deep);background:var(--surface-alt);}
+  .navlinks a.active{color:var(--teal-deep);background:var(--surface-alt);}
+  .progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--teal);width:0%;transition:width .1s linear;}
+  @media(max-width:820px){ .navlinks{display:none;} }
+
+  /* ---------- hero ---------- */
+  .hero{padding:76px 0 60px;position:relative;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;top:-140px;right:-160px;width:480px;height:480px;
+    background:radial-gradient(circle,rgba(31,122,108,0.14) 0%, rgba(31,122,108,0) 70%);
+    border-radius:50%;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+    color:var(--teal-deep);background:var(--surface-alt);border:1px solid var(--teal-line);
+    padding:6px 12px;border-radius:100px;margin-bottom:22px;
+  }
+  .hero h1{font-size:44px;max-width:820px;margin-bottom:18px;}
+  .hero h1 em{font-style:normal;color:var(--teal);}
+  .hero .lede{font-size:18px;color:var(--ink-soft);max-width:640px;margin-bottom:36px;}
+
+  /* rank dots — signature device */
+  .rankdots-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 28px;max-width:640px;margin-bottom:40px;
+    box-shadow:0 1px 2px rgba(16,35,58,0.03);
+  }
+  .rankdots-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;flex-wrap:wrap;gap:6px;}
+  .rankdots-top .kw{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);background:var(--surface-alt);padding:3px 9px;border-radius:6px;}
+  .rankdots-top .vol{font-size:13px;color:var(--ink-faint);}
+  .rankdots-row{display:flex;gap:7px;margin-bottom:14px;}
+  .dot{
+    width:30px;height:30px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);
+    background:var(--surface-alt);border:1px solid var(--line);position:relative;flex:1;
+  }
+  .dot--you{background:var(--teal);color:#fff;border-color:var(--teal);font-weight:600;}
+  .dot--you::after{
+    content:"YOU";position:absolute;top:-24px;left:50%;transform:translateX(-50%);
+    font-size:9px;letter-spacing:.06em;color:var(--teal-deep);font-weight:700;
+  }
+  .rankdots-caption{font-size:14px;color:var(--ink-soft);margin:0;}
+  .rankdots-caption strong{color:var(--ink);}
+
+  .stat-chips{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px;}
+  .chip{
+    background:var(--surface);border:1px solid var(--line);border-radius:11px;
+    padding:14px 18px;min-width:150px;
+  }
+  .chip .num{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--teal-deep);}
+  .chip .lbl{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
+  .byline{font-size:13px;color:var(--ink-faint);border-top:1px solid var(--line);padding-top:20px;max-width:640px;}
+  .byline strong{color:var(--ink-soft);}
+
+  /* ---------- sections ---------- */
+  section.block{padding:64px 0;border-top:1px solid var(--line);}
+  .sec-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:30px;}
+  .sec-num{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--teal);
+    border:1px solid var(--teal-line);background:var(--surface-alt);
+    width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;font-weight:600;
+  }
+  .sec-head h2{font-size:27px;}
+  .sec-head .sec-sub{color:var(--ink-soft);font-size:15px;margin-top:4px;}
+  .sec-body{padding-left:50px;}
+  @media(max-width:600px){ .sec-body{padding-left:0;} }
+
+  .icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* callout panel */
+  .panel{
+    background:var(--surface-alt);border:1px solid var(--teal-line);border-radius:var(--radius);
+    padding:22px 24px;display:flex;gap:14px;
+  }
+  .panel .icon-wrap{
+    width:34px;height:34px;border-radius:9px;background:var(--teal);color:#fff;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .panel h4{font-size:15px;margin-bottom:6px;color:var(--teal-deep);}
+  .panel p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  /* grid utilities */
+  .grid{display:grid;gap:16px;}
+  .grid-2{grid-template-columns:1fr 1fr;}
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-4{grid-template-columns:repeat(4,1fr);}
+  @media(max-width:760px){ .grid-2,.grid-3,.grid-4{grid-template-columns:1fr 1fr;} }
+  @media(max-width:520px){ .grid-2,.grid-3,.grid-4{grid-template-columns:1fr;} }
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .card h4{font-size:14px;color:var(--ink-faint);font-weight:600;text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;}
+  .card .body{font-size:14.5px;color:var(--ink);}
+  .card .big{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--teal-deep);}
+
+  /* location stat cards */
+  .stat-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;text-align:left;}
+  .stat-card .num{font-family:'Space Grotesk',sans-serif;font-size:25px;font-weight:700;color:var(--teal-deep);}
+  .stat-card .lbl{font-size:13px;color:var(--ink-soft);margin-top:4px;}
+
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+  .tag{font-size:12.5px;font-family:'IBM Plex Mono',monospace;background:var(--surface-alt);border:1px solid var(--teal-line);color:var(--teal-deep);padding:5px 10px;border-radius:100px;}
+  .tag.sc{background:#F4EEE3;border-color:#E7D8B8;color:#8A6A28;}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  th{
+    text-align:left;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;
+    text-transform:uppercase;letter-spacing:.03em;color:var(--ink-faint);
+    padding:10px 14px;border-bottom:1px solid var(--line);
+  }
+  td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:middle;}
+  tr.highlight td{background:var(--surface-alt);font-weight:600;}
+  .table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;overflow-x:auto;}
+  .diffbar{width:80px;height:6px;background:var(--line);border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:8px;}
+  .diffbar i{display:block;height:100%;background:var(--teal);}
+  .badge-pos{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+    background:var(--surface-alt);color:var(--teal-deep);padding:3px 9px;border-radius:100px;border:1px solid var(--teal-line);
+  }
+
+  /* bar chart rows */
+  .barlist{display:flex;flex-direction:column;gap:10px;}
+  .barrow{display:grid;grid-template-columns:200px 1fr 56px;align-items:center;gap:12px;}
+  .barrow .name{font-size:13px;color:var(--ink-soft);display:flex;align-items:baseline;gap:6px;min-width:0;}
+  .barrow .name .lbl-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .barrow.you .name{color:var(--ink);font-weight:700;}
+  .barrow .rating{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber);}
+  .track{height:14px;background:var(--surface-alt);border-radius:7px;overflow:hidden;}
+  .fill{height:100%;background:var(--ink-faint);border-radius:7px;}
+  .barrow.you .fill{background:var(--teal);}
+  .barrow .count{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink-soft);text-align:right;}
+  .barrow.you .count{color:var(--teal-deep);font-weight:700;}
+  @media(max-width:600px){ .barrow{grid-template-columns:110px 1fr 44px;} .barrow .name{font-size:12px;} }
+
+  /* watch-out cards */
+  .watch-card{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--brick);
+    border-radius:10px;padding:18px 20px;
+  }
+  .watch-card h4{font-size:14.5px;color:var(--brick);margin-bottom:6px;}
+  .watch-card p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+  /* campaign cards */
+  .camp-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;}
+  .camp-card .icon-wrap{
+    width:36px;height:36px;border-radius:9px;background:var(--surface-alt);color:var(--teal-deep);
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  }
+  .camp-card h4{font-size:15px;margin-bottom:6px;}
+  .camp-card .purpose{font-size:13.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .camp-card .note{font-size:12.5px;color:var(--ink-faint);font-family:'IBM Plex Mono',monospace;}
+
+  .icon-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .icon-list li{display:flex;gap:12px;align-items:flex-start;}
+  .icon-list .icon-wrap{
+    width:30px;height:30px;border-radius:8px;background:var(--surface-alt);color:var(--teal-deep);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+  }
+  .icon-list p{margin:0;font-size:14.5px;color:var(--ink);}
+
+  /* budget comparison */
+  .budget-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+  .budget-card .head{background:var(--teal-deep);color:#fff;padding:16px 22px;}
+  .budget-card.scale .head{background:var(--ink);}
+  .budget-card .head .phase{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;opacity:.75;}
+  .budget-card .head h4{color:#fff;font-size:19px;margin-top:2px;}
+  .budget-row{display:flex;justify-content:space-between;padding:13px 22px;border-bottom:1px solid var(--line);font-size:14px;}
+  .budget-row:last-child{border-bottom:none;}
+  .budget-row .k{color:var(--ink-soft);}
+  .budget-row .v{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);text-align:right;}
+  .disclaimer{font-size:12.5px;color:var(--ink-faint);margin-top:14px;}
+
+  /* why us */
+  .why-card{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);}
+  .why-card:last-child{border-bottom:none;}
+  .why-card .icon-wrap{
+    width:40px;height:40px;border-radius:10px;background:var(--surface-alt);color:var(--teal-deep);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .why-card h4{font-size:16px;margin-bottom:5px;}
+  .why-card p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+
+  .closing{
+    margin-top:44px;background:var(--teal-deep);color:#fff;border-radius:18px;
+    padding:44px 40px;position:relative;overflow:hidden;
+  }
+  .closing::before{
+    content:"";position:absolute;bottom:-100px;left:-80px;width:320px;height:320px;
+    background:radial-gradient(circle,rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);border-radius:50%;
+  }
+  .closing h3{color:#fff;font-size:26px;max-width:520px;margin-bottom:12px;}
+  .closing p{color:rgba(255,255,255,0.78);max-width:480px;font-size:15px;margin-bottom:0;}
+  .closing .sig{margin-top:22px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#fff;}
+  .closing .sig span{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:13px;color:rgba(255,255,255,0.6);margin-top:2px;}
+
+  footer{padding:34px 0 60px;}
+  footer .fnote{font-size:12px;color:var(--ink-faint);line-height:1.7;border-top:1px solid var(--line);padding-top:22px;}
+  footer .fbrand{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--teal-deep);font-size:14px;margin-bottom:10px;}
+
+  @media(max-width:600px){
+    .hero h1{font-size:32px;}
+    .sec-head h2{font-size:23px;}
+    .rankdots-row{gap:4px;}
+    .dot{width:24px;height:24px;font-size:9px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- icon sprite -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9.5-9.3C1.2 7.4 3 4.5 6.2 4.2c2-.2 3.5 1 5.8 3.3 2.3-2.3 3.8-3.5 5.8-3.3 3.2.3 5 3.2 3.7 6.5C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="ic-mega" viewBox="0 0 24 24"><path d="M3 10v4a1 1 0 001 1h2l9 5V4l-9 5H4a1 1 0 00-1 1z"/><path d="M17 9a4 4 0 010 6"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.8 6.4.6-4.8 4.3 1.4 6.3L12 16.9 6.4 20l1.4-6.3-4.8-4.3 6.4-.6L12 3z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 5h6v6"/></symbol>
+  <symbol id="ic-dollar" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6.5c0-2-2.2-3.2-5-3.2s-5 1.3-5 3.4c0 4.4 10 2 10 6.3 0 2.1-2.2 3.4-5 3.4s-5-1.2-5-3.2"/></symbol>
+  <symbol id="ic-link" viewBox="0 0 24 24"><path d="M9 15l6-6"/><path d="M13 5l1.5-1.5a4 4 0 015.6 5.6L18 11"/><path d="M11 19l-1.5 1.5a4 4 0 01-5.6-5.6L6 13"/></symbol>
+  <symbol id="ic-rocket" viewBox="0 0 24 24"><path d="M14 3c3 1 6 4 7 7-3 1-6 0-8-2l1-5z"/><path d="M11 13c-2 2-3 6-3 6s4-1 6-3"/><path d="M5 19l1.5-1.5"/><circle cx="15" cy="9" r="1.2"/></symbol>
+  <symbol id="ic-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="4"/><rect x="5" y="13" width="14" height="8"/><path d="M12 9v12"/><path d="M12 9C9 9 8 6.5 9.5 5S12 6 12 9z"/><path d="M12 9c3 0 4-2.5 2.5-4S12 6 12 9z"/></symbol>
+  <symbol id="ic-building" viewBox="0 0 24 24"><rect x="4" y="3" width="10" height="18"/><rect x="14" y="9" width="6" height="12"/><path d="M7 7h.01M10 7h.01M7 11h.01M10 11h.01M7 15h.01M10 15h.01"/></symbol>
+</svg>
+
+<div class="topnav">
+  <div class="topnav-inner">
+    <div class="brand"><span class="dot"></span>Ortho Marketing</div>
+    <nav class="navlinks" id="navlinks">
+      <a href="#opportunity">Opportunity</a>
+      <a href="#snapshot">Snapshot</a>
+      <a href="#market">Market</a>
+      <a href="#audit">Audit</a>
+      <a href="#competition">Competition</a>
+      <a href="#keywords">Keywords</a>
+      <a href="#plan">Plan</a>
+      <a href="#investment">Investment</a>
+      <a href="#whyus">Why Us</a>
+    </nav>
+  </div>
+  <div class="progress" id="progress"></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">HYPER-LOCAL GOOGLE ADS LAUNCH</div>
+    <h1>Charlotte's best-rated pediatric dentist — now showing up <em>exactly</em> when parents are searching.</h1>
+    <p class="lede">Webb Pediatric Dentistry holds a perfect 5.0★ rating — better than every nearby competitor — and the SEO program Ortho Marketing already manages is steadily building organic momentum. A focused, hyper-local Google Ads launch adds the one piece that works from day one: paid visibility for the highest-intent searches in your own backyard, while that organic growth keeps compounding underneath it.</p>
+
+    <div class="rankdots-card reveal">
+      <div class="rankdots-top">
+        <span class="kw">"pediatric dentist charlotte nc"</span>
+        <span class="vol">880 searches / month</span>
+      </div>
+      <div class="rankdots-row">
+        <div class="dot">1</div><div class="dot">2</div><div class="dot">3</div><div class="dot">4</div><div class="dot">5</div>
+        <div class="dot">6</div><div class="dot">7</div><div class="dot">8</div><div class="dot">9</div><div class="dot dot--you">10</div>
+      </div>
+      <p class="rankdots-caption">Organic rankings like this climb over months, not days — and they're already moving the right direction. A hyper-local Google Ads campaign puts Webb at the very <strong>top</strong> of the page for this exact search, starting the week it launches.</p>
+    </div>
+
+    <div class="stat-chips">
+      <div class="chip reveal"><div class="num" data-count="5.0" data-decimals="1">0</div><div class="lbl">Google rating (106 reviews)</div></div>
+      <div class="chip reveal"><div class="num" data-count="900" data-prefix="$">–</div><div class="lbl">New monthly hyper-local ad budget</div></div>
+      <div class="chip reveal"><div class="num" data-count="8.00" data-prefix="$">–</div><div class="lbl">Avg. cost-per-click, dental category</div></div>
+      <div class="chip reveal"><div class="num" data-count="1" data-suffix=" / 15">0</div><div class="lbl">Nearby competitors running any paid search</div></div>
+    </div>
+
+    <div class="byline"><strong>Prepared for Webb Pediatric Dentistry</strong> by Ortho Marketing · August 2026</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1 — OPPORTUNITY -->
+  <section class="block" id="opportunity">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">1</div>
+        <div>
+          <h2>The opportunity</h2>
+          <div class="sec-sub">Why now is the right time to add paid media</div>
+        </div>
+      </div>
+      <div class="sec-body">
+        <div class="grid grid-2" style="align-items:start;">
+          <div class="reveal">
+            <p>Webb Pediatric Dentistry already has a strong foundation: a board-certified doctor, a perfect review average, and an SEO program Ortho Marketing has been building — one that's already producing organic traffic and service-area pages across eight surrounding markets. That kind of foundation compounds over months, not overnight, which is exactly where a focused paid layer earns its keep.</p>
+            <p>Dental is one of the highest cost-per-click categories in all of Google Ads, which normally signals intense competition. Not here — almost no nearby practice runs sustained paid search, which means a modest, hyper-local budget can go further in this market than it would in almost any other.</p>
+          </div>
+          <div class="panel reveal">
+            <div class="icon-wrap"><svg class="icon" style="stroke:#fff"><use href="#ic-target"/></svg></div>
+            <div>
+              <h4>The opportunity in one line</h4>
+              <p>Your SEO program is already compounding and your rating already beats every nearby competitor — a hyper-local Google Ads budget adds the one piece that works on day one: paid visibility for the searches happening right now.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 — SNAPSHOT -->
+  <section class="block" id="snapshot">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">2</div>
+        <div>
+          <h2>Practice snapshot</h2>
+          <div class="sec-sub">What we gathered from webbpediatricdentistry.com and your Google Business Profile</div>
+        </div>
+      </div>
+      <div class="sec-body grid grid-3">
+        <div class="card reveal"><h4>Doctor</h4><div class="body">Dr. Logan Webb, DDS — board-certified pediatric dentist, Charlotte native</div></div>
+        <div class="card reveal"><h4>Address</h4><div class="body">3125 Springbank Ln, Ste E, Charlotte, NC 28226</div></div>
+        <div class="card reveal"><h4>Hours</h4><div class="body">Mon–Wed 7:30am–4:30pm, Thu 7:30am–3:30pm — closed Fri–Sun</div></div>
+        <div class="card reveal"><h4>Core services</h4><div class="body">Preventive care, fillings & crowns, pulp therapy, laser dentistry, emergency care, nitrous sedation, special needs dentistry</div></div>
+        <div class="card reveal"><h4>Technology</h4><div class="body">iTero digital scanning, laser dentistry, low-radiation digital X-ray</div></div>
+        <div class="card reveal"><h4>Current promotion</h4><div class="body">Free dental cleanings for children under 3 — live sitewide today</div></div>
+        <div class="card reveal"><h4>Google rating</h4><div class="big">5.0★</div><div class="body">106 reviews</div></div>
+        <div class="card reveal"><h4>New: paid media</h4><div class="big">$900/mo</div><div class="body">Hyper-local Google Ads, launching now alongside the website &amp; SEO Ortho Marketing already manages</div></div>
+        <div class="card reveal"><h4>Service-area pages already live</h4><div class="body">Concord, Gastonia, Belmont, Fort Mill SC, Pineville, Rock Hill SC, Monroe, Huntersville — built, indexed, ready to layer in as the campaign grows</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 — MARKET -->
+  <section class="block" id="market">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">3</div>
+        <div>
+          <h2>Your market</h2>
+          <div class="sec-sub">South Charlotte / Providence Road corridor, ZIP 28226</div>
+        </div>
+      </div>
+      <div class="sec-body">
+        <div class="grid grid-4 reveal" style="margin-bottom:26px;">
+          <div class="stat-card"><div class="num">~39,000</div><div class="lbl">Residents in ZIP 28226</div></div>
+          <div class="stat-card"><div class="num">$117K</div><div class="lbl">Median household income (vs. $87K county)</div></div>
+          <div class="stat-card"><div class="num">30.7%</div><div class="lbl">Households earning $200K+/yr</div></div>
+          <div class="stat-card"><div class="num">$507K+</div><div class="lbl">Median home value</div></div>
+        </div>
+        <p class="reveal">This is a high-income, low-price-sensitivity suburb — well suited to a practice that accepts insurance and CareCredit financing alike. One nuance worth planning around: the ZIP's median age (40–41) skews slightly older than a typical young-family area, which is why we'd widen geo-targeting a few miles into neighboring ZIPs rather than restrict spend to 28226 alone.</p>
+        <div class="reveal" style="margin-top:22px;">
+          <p style="margin-bottom:6px;font-weight:600;font-size:14px;">Existing service area</p>
+          <div class="tags">
+            <span class="tag">Concord, NC</span><span class="tag">Gastonia, NC</span><span class="tag">Belmont, NC</span>
+            <span class="tag">Monroe, NC</span><span class="tag">Huntersville, NC</span><span class="tag">Pineville, NC</span>
+            <span class="tag sc">Fort Mill, SC</span><span class="tag sc">Rock Hill, SC</span><span class="tag sc">Tega Cay, SC</span>
+          </div>
+        </div>
+        <div class="panel reveal" style="margin-top:22px;">
+          <div class="icon-wrap"><svg class="icon" style="stroke:#fff"><use href="#ic-pin"/></svg></div>
+          <div>
+            <h4>A built-in cross-border advantage</h4>
+            <p>Most Charlotte-side pediatric dental competitors don't actively target South Carolina searchers. Webb already has indexed landing pages for Fort Mill, Rock Hill, and Tega Cay — ready to receive paid traffic with no new content needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 — AUDIT -->
+  <section class="block" id="audit">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">4</div>
+        <div>
+          <h2>Where you stand today</h2>
+          <div class="sec-sub">How the SEO program already in place and a new paid layer fit together</div>
+        </div>
+      </div>
+      <div class="sec-body">
+        <h4 style="font-size:15px;margin-bottom:10px;">How organic and paid work together</h4>
+        <p>The SEO program Ortho Marketing manages is already driving real organic traffic, and that traffic keeps growing as the service-area content matures. The keywords with the highest buying intent — the ones a parent searches right before calling to book — are exactly where a hyper-local paid campaign adds immediate value, landing at the very top of the page while organic rankings continue climbing toward it:</p>
+        <div class="table-wrap reveal" style="margin-bottom:26px;">
+          <table>
+            <tr><th>Keyword</th><th>Volume/mo</th><th>Organic rank today</th></tr>
+            <tr><td>charlotte pediatric dentistry</td><td>2,400</td><td><span class="badge-pos">#23 · page 3</span></td></tr>
+            <tr><td>pediatric dentist charlotte nc</td><td>880</td><td><span class="badge-pos">#10 · page 1</span></td></tr>
+            <tr><td>pediatric dentist charlotte</td><td>590</td><td><span class="badge-pos">#21 · page 3</span></td></tr>
+            <tr><td>best pediatric dentist charlotte nc</td><td>90</td><td><span class="badge-pos">#91 · page 9</span></td></tr>
+          </table>
+        </div>
+        <div class="grid grid-3">
+          <div class="card reveal"><h4>SEO program</h4><div class="big">Compounding</div><div class="body">The ongoing SEO work is what put these service-area pages in place — the exact base a hyper-local paid campaign builds on.</div></div>
+          <div class="card reveal"><h4>Reputation</h4><div class="big">5.0★</div><div class="body">Best-in-class locally — a strong trust signal for organic and paid alike (more in Section 5).</div></div>
+          <div class="card reveal"><h4>Paid search</h4><div class="big">Launching</div><div class="body">A focused $900/mo hyper-local campaign, live for the first time.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 — COMPETITION -->
+  <section class="block" id="competition">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">5</div>
+        <div>
+          <h2>The competitive landscape</h2>
+          <div class="sec-sub">Who shows up where you need to show up</div>
+        </div>
+      </div>
+      <div class="sec-body">
+
+        <h4 style="font-size:15px;margin-bottom:10px;">Organic search results for "pediatric dentist charlotte nc"</h4>
+        <div class="table-wrap reveal" style="margin-bottom:32px;">
+          <table>
+            <tr><th style="width:50px;">#</th><th>Practice</th><th>Note</th></tr>
+            <tr><td>1</td><td>Providence Pediatric Dentistry &amp; Orthodontics</td><td>Dual-specialist positioning</td></tr>
+            <tr><td>2</td><td>NC Pediatric Dentistry</td><td>16+ location aggregator brand</td></tr>
+            <tr><td>3</td><td>University Pediatric Dentistry</td><td>—</td></tr>
+            <tr><td>4</td><td>AKA Smiles</td><td>—</td></tr>
+            <tr><td>5</td><td>Carolina Kids Dentistry</td><td>Mint Hill</td></tr>
+            <tr><td>6</td><td>Rea Farms Pediatric Dentistry</td><td>Newer practice</td></tr>
+            <tr><td>7</td><td>Bird Pediatric Dentistry</td><td>In-house orthodontics</td></tr>
+            <tr><td>8</td><td>Blakeney Pediatric Dentistry</td><td>"Voted Best in Charlotte" positioning</td></tr>
+            <tr><td>9</td><td>SouthPark Pediatric Dentistry</td><td>Market leader by review volume</td></tr>
+            <tr class="highlight"><td>10</td><td>Webb Pediatric Dentistry</td><td>Bottom of page 1</td></tr>
+          </table>
+        </div>
+
+        <h4 style="font-size:15px;margin-bottom:14px;">Google reviews — where you stand among nearby practices</h4>
+        <div class="barlist reveal" style="margin-bottom:14px;">
+          <div class="barrow"><div class="name"><span class="lbl-text">SouthPark Pediatric</span> <span class="rating">4.9★</span></div><div class="track"><div class="fill" style="width:100%"></div></div><div class="count">1,057</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Lume — Cotswold</span> <span class="rating">4.7★</span></div><div class="track"><div class="fill" style="width:66.8%"></div></div><div class="count">706</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Ballantyne Pediatric</span> <span class="rating">4.8★</span></div><div class="track"><div class="fill" style="width:48.9%"></div></div><div class="count">517</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Blakeney Pediatric</span> <span class="rating">4.8★</span></div><div class="track"><div class="fill" style="width:40.4%"></div></div><div class="count">427</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Growing Smiles</span> <span class="rating">4.9★</span></div><div class="track"><div class="fill" style="width:39.3%"></div></div><div class="count">415</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">S. Charlotte Pediatric</span> <span class="rating">4.9★</span></div><div class="track"><div class="fill" style="width:33.9%"></div></div><div class="count">358</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Lume — Waverly</span> <span class="rating">4.7★</span></div><div class="track"><div class="fill" style="width:31.4%"></div></div><div class="count">332</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Providence Ped. &amp; Ortho</span> <span class="rating">5.0★</span></div><div class="track"><div class="fill" style="width:28.7%"></div></div><div class="count">303</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Bird Pediatric</span> <span class="rating">4.4★</span></div><div class="track"><div class="fill" style="width:25.4%"></div></div><div class="count">269</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">GoKids Pediatric</span> <span class="rating">4.9★</span></div><div class="track"><div class="fill" style="width:22.9%"></div></div><div class="count">242</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Clark Pediatric</span> <span class="rating">4.6★</span></div><div class="track"><div class="fill" style="width:14.5%"></div></div><div class="count">153</div></div>
+          <div class="barrow you"><div class="name"><span class="lbl-text">Webb Pediatric (you)</span> <span class="rating">5.0★</span></div><div class="track"><div class="fill" style="width:10%"></div></div><div class="count">106</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Rea Farms Pediatric</span> <span class="rating">5.0★</span></div><div class="track"><div class="fill" style="width:3.6%"></div></div><div class="count">38</div></div>
+        </div>
+        <p class="reveal" style="font-size:13.5px;color:var(--ink-faint);margin-bottom:30px;">You hold the highest rating in the entire set at meaningful review volume — the opportunity is closing the count gap, not the quality gap.</p>
+
+        <div class="grid grid-2 reveal" style="margin-bottom:32px;">
+          <div class="watch-card">
+            <h4>Your closest neighbor</h4>
+            <p>Clark Pediatric Dentistry sits almost directly on the same road — the most immediate proximity competitor for "near me" searches and the local map pack. Worth a defensive geo-targeting priority.</p>
+          </div>
+          <div class="watch-card">
+            <h4>An opening in the market</h4>
+            <p>Several recent reviews for Lume Cotswold (formerly Charlotte Pediatric Dentistry, 706 reviews) mention their rebrand feeling less personal. That's a natural opening for Webb's single-doctor, boutique-care positioning in ad messaging.</p>
+          </div>
+        </div>
+
+        <h4 style="font-size:15px;margin-bottom:14px;">Search authority — building alongside the content program</h4>
+        <div class="barlist reveal" style="margin-bottom:8px;">
+          <div class="barrow"><div class="name"><span class="lbl-text">NC Pediatric Dentistry</span></div><div class="track"><div class="fill" style="width:100%"></div></div><div class="count">25</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Growing Smiles</span></div><div class="track"><div class="fill" style="width:100%"></div></div><div class="count">25</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">SouthPark Pediatric</span></div><div class="track"><div class="fill" style="width:44%"></div></div><div class="count">11</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Blakeney Pediatric</span></div><div class="track"><div class="fill" style="width:40%"></div></div><div class="count">10</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Bird Pediatric</span></div><div class="track"><div class="fill" style="width:20%"></div></div><div class="count">5</div></div>
+          <div class="barrow"><div class="name"><span class="lbl-text">Providence PDO</span></div><div class="track"><div class="fill" style="width:13.6%"></div></div><div class="count">3.4</div></div>
+          <div class="barrow you"><div class="name"><span class="lbl-text">Webb Pediatric (you)</span></div><div class="track"><div class="fill" style="width:6.4%"></div></div><div class="count">1.6</div></div>
+        </div>
+        <p class="reveal" style="font-size:14px;color:var(--ink-soft);margin-bottom:0;">Domain authority builds over years of consistent content and backlinks — it's a long-game metric, and the SEO program already underway is investing in exactly that. Paid search is the complementary lever: it doesn't need to wait on that curve, so the hyper-local campaign can start driving calls immediately while authority continues to build in the background.</p>
+
+        <div class="panel reveal" style="margin-top:24px;">
+          <div class="icon-wrap"><svg class="icon" style="stroke:#fff"><use href="#ic-check"/></svg></div>
+          <div>
+            <h4>Key finding — low paid competition</h4>
+            <p>Only one of the fifteen nearby practices we benchmarked shows any paid search activity at all — and it's negligible, an estimated 5 keywords and 14 monthly clicks. For a category with an $8.00 national average CPC, that's a genuine first-mover window: a well-run account can likely secure strong placement without a costly bidding war.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 — KEYWORDS -->
+  <section class="block" id="keywords">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">6</div>
+        <div>
+          <h2>The keyword opportunity</h2>
+          <div class="sec-sub">What parents are searching, what it costs to be seen, and what the hyper-local campaign will target directly</div>
+        </div>
+      </div>
+      <div class="sec-body">
+        <div class="table-wrap reveal" style="margin-bottom:26px;">
+          <table>
+            <tr><th>Keyword</th><th>Volume/mo</th><th>CPC</th><th>Difficulty</th></tr>
+            <tr><td>pediatric dentist near me</td><td>90,500*</td><td>$5.66</td><td><span class="diffbar"><i style="width:50%"></i></span>50</td></tr>
+            <tr><td>kids dentist near me</td><td>27,100*</td><td>$6.38</td><td><span class="diffbar"><i style="width:50%"></i></span>50</td></tr>
+            <tr><td>pediatric dentist charlotte nc</td><td>880</td><td>$6.44</td><td><span class="diffbar"><i style="width:52%"></i></span>52</td></tr>
+            <tr><td>pediatric dentist charlotte</td><td>590</td><td>$6.44</td><td><span class="diffbar"><i style="width:50%"></i></span>50</td></tr>
+            <tr><td>pediatric dentist huntersville nc</td><td>210</td><td>$6.52</td><td><span class="diffbar"><i style="width:30%"></i></span>30</td></tr>
+            <tr><td>pediatric dentist gastonia nc</td><td>260</td><td>$8.46</td><td><span class="diffbar"><i style="width:15%"></i></span>15</td></tr>
+            <tr><td>pediatric dentist rock hill sc</td><td>260</td><td>$4.09</td><td><span class="diffbar"><i style="width:4%"></i></span>4</td></tr>
+            <tr><td>pediatric dentist concord nc</td><td>170</td><td>$7.93</td><td><span class="diffbar"><i style="width:23%"></i></span>23</td></tr>
+            <tr><td>pediatric dentist monroe nc</td><td>110</td><td>$3.75</td><td><span class="diffbar"><i style="width:20%"></i></span>20</td></tr>
+            <tr><td>best pediatric dentist charlotte nc</td><td>90</td><td>$5.31</td><td><span class="diffbar"><i style="width:50%"></i></span>50</td></tr>
+          </table>
+        </div>
+        <p class="reveal" style="font-size:12.5px;color:var(--ink-faint);margin-bottom:28px;">*"Near me" volumes are nationally aggregated; Google auto-localizes these queries, so real local volume is a fraction of the figure shown — but the buyer intent is the highest of any term in this list.</p>
+
+        <div class="grid grid-4 reveal">
+          <div class="stat-card"><div class="num">$8.00</div><div class="lbl">Avg. CPC, dental category (2026)</div></div>
+          <div class="stat-card"><div class="num">$66.69</div><div class="lbl">Avg. cost-per-lead, all industries</div></div>
+          <div class="stat-card"><div class="num">$50–$84</div><div class="lbl">Typical dental cost-per-lead</div></div>
+          <div class="stat-card"><div class="num">$54</div><div class="lbl">Typical CPL for "near me" dental terms</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 — PLAN -->
+  <section class="block" id="plan">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">7</div>
+        <div>
+          <h2>The plan</h2>
+          <div class="sec-sub">A hyper-local launch, built to grow</div>
+        </div>
+      </div>
+      <div class="sec-body">
+        <p class="reveal">At $900/month, the strongest move is depth over breadth: two tightly-scoped campaigns concentrated on the highest-intent searches within a hyper-local radius of the practice, rather than spreading thin across every service area at once.</p>
+
+        <div class="grid grid-2 reveal" style="margin:22px 0 30px;">
+          <div class="camp-card"><div class="icon-wrap"><svg class="icon"><use href="#ic-shield"/></svg></div><h4>Brand</h4><div class="purpose">Protect "Webb Pediatric Dentistry" / "Dr. Logan Webb" searches</div><div class="note">$100/mo · always-on, lowest cost</div></div>
+          <div class="camp-card"><div class="icon-wrap"><svg class="icon"><use href="#ic-target"/></svg></div><h4>Hyper-Local Core</h4><div class="purpose">"Pediatric dentist near me," "kids dentist Charlotte" — geo-fenced tightly around 28226</div><div class="note">$800/mo · the primary driver</div></div>
+        </div>
+
+        <div class="panel reveal" style="margin-bottom:36px;">
+          <div class="icon-wrap"><svg class="icon" style="stroke:#fff"><use href="#ic-pin"/></svg></div>
+          <div>
+            <h4>Ready to switch on next</h4>
+            <p>The service-area landing pages already built (Fort Mill/Rock Hill SC, Huntersville/Concord, Gastonia/Belmont/Monroe) are ready for their own campaigns as budget grows — alongside a Special Needs &amp; Sedation campaign, a dayparted Emergency Dental campaign, and a Meta Ads layer built around the free-cleaning-under-3 offer. None of it requires new content work; it's simply a matter of turning the budget up when the time is right.</p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h4 style="font-size:15px;margin-bottom:12px;"><svg class="icon" style="width:16px;height:16px;vertical-align:-3px;margin-right:6px;color:var(--teal)"><use href="#ic-check"/></svg>Getting the foundation right</h4>
+          <ul class="icon-list">
+            <li><div class="icon-wrap"><svg class="icon" style="width:15px;height:15px"><use href="#ic-check"/></svg></div><p>Confirm tracking for calls, the new-patient line, form fills, and text clicks before media spend begins.</p></li>
+            <li><div class="icon-wrap"><svg class="icon" style="width:15px;height:15px"><use href="#ic-building"/></svg></div><p>Google Business Profile audit — categories, service list, and Q&amp;A complete and accurate.</p></li>
+            <li><div class="icon-wrap"><svg class="icon" style="width:15px;height:15px"><use href="#ic-star"/></svg></div><p>Post-visit review-generation flow to begin closing the review-count gap against SouthPark and Lume Cotswold.</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 — INVESTMENT -->
+  <section class="block" id="investment">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">8</div>
+        <div>
+          <h2>Investment &amp; what to expect</h2>
+          <div class="sec-sub">How the $900/month hyper-local budget breaks down</div>
+        </div>
+      </div>
+      <div class="sec-body">
+        <div class="grid grid-2 reveal">
+          <div class="budget-card">
+            <div class="head"><div class="phase">$900 / MONTH · GOOGLE ADS</div><h4>Budget bifurcation</h4></div>
+            <div class="budget-row"><span class="k">Brand</span><span class="v">$100 (11%)</span></div>
+            <div class="budget-row"><span class="k">Hyper-Local Core</span><span class="v">$800 (89%)</span></div>
+            <div class="budget-row"><span class="k">Total monthly budget</span><span class="v">$900</span></div>
+            <div class="budget-row"><span class="k">Geography</span><span class="v">Hyper-local radius around 28226</span></div>
+          </div>
+          <div class="budget-card scale">
+            <div class="head"><div class="phase">PROJECTED</div><h4>What to expect</h4></div>
+            <div class="budget-row"><span class="k">Blended CPC (est.)</span><span class="v">$5.50–$6.50</span></div>
+            <div class="budget-row"><span class="k">Est. monthly clicks</span><span class="v">~140–165</span></div>
+            <div class="budget-row"><span class="k">Est. conversion rate</span><span class="v">8–11%</span></div>
+            <div class="budget-row"><span class="k">Est. monthly leads</span><span class="v">~12–18</span></div>
+            <div class="budget-row"><span class="k">Est. cost per lead</span><span class="v">$55–$75</span></div>
+          </div>
+        </div>
+        <p class="disclaimer reveal">These are illustrative planning ranges for the $900/month hyper-local launch, built from the 2026 dental-industry benchmarks in Section 6 and Webb's own keyword set — meant to frame the conversation, not to be read as a guarantee.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 — WHY US -->
+  <section class="block" id="whyus">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-num">9</div>
+        <div>
+          <h2>Why Ortho Marketing</h2>
+          <div class="sec-sub">The case for running this plan with the team that already knows your site</div>
+        </div>
+      </div>
+      <div class="sec-body">
+        <div class="reveal">
+          <div class="why-card">
+            <div class="icon-wrap"><svg class="icon"><use href="#ic-building"/></svg></div>
+            <div><h4>We already manage your site and your SEO</h4><p>Ortho Marketing built and hosts webbpediatricdentistry.com and manages the SEO program driving its organic growth — this hyper-local Google Ads launch is a natural next step from the team already in your corner, not a new vendor to onboard.</p></div>
+          </div>
+          <div class="why-card">
+            <div class="icon-wrap"><svg class="icon"><use href="#ic-check"/></svg></div>
+            <div><h4>The landing pages already exist</h4><p>The service-area pages ready to expand this campaign into are already built and indexed by the same SEO program — most agencies pitching this account would need to build that content from scratch first.</p></div>
+          </div>
+          <div class="why-card">
+            <div class="icon-wrap"><svg class="icon"><use href="#ic-rocket"/></svg></div>
+            <div><h4>A first-mover window</h4><p>With effectively no nearby competitor running sustained Google Ads, an early, well-managed launch can capture a disproportionate share of a high-CPC category before others catch on.</p></div>
+          </div>
+          <div class="why-card">
+            <div class="icon-wrap"><svg class="icon"><use href="#ic-gift"/></svg></div>
+            <div><h4>Ready-made creative assets</h4><p>The free-cleaning-under-3 offer and the 5.0★ rating are proof points that already exist — nothing new needs to be manufactured to start driving qualified leads.</p></div>
+          </div>
+        </div>
+
+        <div class="closing reveal">
+          <h3>Webb Pediatric Dentistry has the reputation and the SEO foundation. This plan is how it starts converting today.</h3>
+          <p>A perfect rating and an SEO program already gaining traction are rare starting points — most practices spend years building what you already have. A focused $900/month hyper-local Google Ads campaign is how that foundation turns into booked appointments now, while the organic growth keeps compounding alongside it.</p>
+          <div class="sig">Ortho Marketing<span>Paid media, built around what you've already earned.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fnote">
+      <div class="fbrand">Ortho Marketing</div>
+      Sources: webbpediatricdentistry.com; Semrush (organic &amp; paid keyword and competitor data); Ahrefs (domain authority, backlink &amp; traffic benchmarking); Google Business Profile (ratings, reviews, hours); U.S. Census ACS 5-Year Estimates (ZIP 28226 demographics); WordStream/LocaliQ 2026 Google Ads Benchmarks and ROA Marketing (industry CPC/CPL benchmarks). Compiled entirely from publicly available data — no account access was required.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // active nav + scroll progress
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.navlinks a');
+  const progress = document.getElementById('progress');
+
+  function onScroll(){
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (docHeight > 0 ? (scrollTop/docHeight)*100 : 0) + '%';
+
+    let current = '';
+    sections.forEach(sec=>{
+      const top = sec.offsetTop - 90;
+      if(scrollTop >= top) current = sec.id;
+    });
+    navLinks.forEach(a=>{
+      a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // count-up stat chips
+  const counters = document.querySelectorAll('.chip .num');
+  const cio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      const el = e.target;
+      const target = parseFloat(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const isDecimal = el.dataset.count.includes('.');
+      const decimals = parseInt(el.dataset.decimals || '2', 10);
+      const dur = 900;
+      const start = performance.now();
+      function tick(now){
+        const p = Math.min(1,(now-start)/dur);
+        const eased = 1 - Math.pow(1-p,3);
+        const val = target*eased;
+        el.textContent = prefix + (isDecimal ? val.toFixed(decimals) : Math.round(val)) + suffix;
+        if(p<1) requestAnimationFrame(tick);
+        else el.textContent = prefix + (isDecimal ? target.toFixed(decimals) : target) + suffix;
+      }
+      requestAnimationFrame(tick);
+    });
+  }, {threshold:0.4});
+  counters.forEach(el=>cio.observe(el));
+</script>
+
+</body>
+</html>
